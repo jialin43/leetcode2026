@@ -1,0 +1,23 @@
+package org.example.leetcode;
+
+public class L121 {
+    public static int maxProfit(int[] prices) {
+        int n = prices.length;
+        int profit = 0;
+        int min = prices[0];
+        for (int i=0;i<n;i++) {
+                min = Math.min(min,prices[i]);
+                int c = prices[i]-min;
+                profit = Math.max(profit,c);
+
+        }
+        return profit;
+
+
+
+    }
+
+    public static void main(String[] args) {
+
+    }
+}
