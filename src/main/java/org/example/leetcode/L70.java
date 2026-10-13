@@ -3,29 +3,15 @@ package org.example.leetcode;
 import java.util.ArrayList;
 
 public class L70 {
-    public static String reverseWords(String s) {
-        StringBuilder sb = new StringBuilder();
-        String[] array = s.split(" ");
 
-        ArrayList<String> list = new ArrayList<>();
-        for (int i=array.length-1;i>=0;i--) {
-            if(!"".equals(array[i])) {
-                if(i>0 ) {
-                    sb.append(array[i]).append(" ");
-                }else {
-                    sb.append(array[i]);
-                }
-            }
+
+    public int climbStairs(int n) {
+        int[] dp = new int[n+1];
+        dp[0] = 1;
+        dp[1] = 1;
+        for (int i=2;i<=n;i++) {
+            dp[i] = dp[i-1]+dp[i-2];
         }
-        if(sb.lastIndexOf(" ")==sb.length()-1) {
-            sb.deleteCharAt(sb.lastIndexOf(" "));
-        }
-        return sb.toString();
-
-    }
-
-    public static void main(String[] args) {
-        String s = "  hello world  ";
-        System.out.println(reverseWords(s));
+        return dp[n];
     }
 }

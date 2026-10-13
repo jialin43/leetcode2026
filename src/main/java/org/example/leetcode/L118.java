@@ -1,2 +1,10 @@
-package org.example.leetcode;public class L118 {
+package org.example.leetcode;
+
+import java.util.List;
+
+public class L118 {
+    public List<List<Integer>> generate(int numRows) {
+
+    }
 }
+
