@@ -1,11 +1,7 @@
 package org.example.leetcode;
-class ListNode {
-    int val;
-    ListNode next;
-    ListNode() {}
-    ListNode(int val) { this.val = val; }
-    ListNode(int val, ListNode next) { this.val = val; this.next = next; }
-}
+
+import static org.example.leetcode.ListNode.buildNode;
+
 public class L234 {
 
     public static boolean isPalindrome(ListNode head) {
@@ -60,16 +56,5 @@ public class L234 {
         System.out.println(palindrome);
     }
 
-    public static ListNode buildNode(String str) {
-        String[] split = str.split(",");
-        ListNode head = new ListNode();
-        ListNode p = head;
-        for (String s:split) {
 
-            ListNode q = new ListNode(Integer.parseInt(s));
-            p.next = q;
-            p = p.next;
-        }
-        return head.next;
-    }
 }
